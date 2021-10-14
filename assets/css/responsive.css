@@ -26,12 +26,11 @@
         padding: 0 41px;
     }
     #nav .subnav a:hover {}
-    .col-third {
-        width: 100%;
-        margin-top: 30px;
-    }
     #content .member-img {
         width: 60%;
+    }
+    .s-col-full {
+        width: 100%;
     }
 }
 
