@@ -32,6 +32,9 @@
     .s-col-full {
         width: 100%;
     }
+    .s-mt-8 {
+        margin: 8px 0px!important;
+    }
 }
 
 
