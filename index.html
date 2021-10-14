@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/icons/themify-icons/themify-icons.css">
     <title>The Band</title>
 </head>
@@ -47,6 +48,9 @@
                 </li>
             </ul>
             <!--End Nav -->
+            <div class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
             <!-- Begin : Search button  -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
@@ -212,12 +216,37 @@
         const modal = document.querySelector(".js-modal");
         const close = document.querySelector(".js-modal-close");
         const modalContainer = document.querySelector(".js-modal-container");
+        let header = document.querySelector("#header");
+        let menuMobile = document.querySelector(".mobile-menu-btn");
+        let headerHeight = header.clientHeight;
+        console.log(menuMobile);
+        //modal
         for (const buyBtn of buyBtns) {
             buyBtn.addEventListener('click', () => modal.classList.add('open'));
         }
         close.addEventListener('click', () => modal.classList.remove('open'));
         modalContainer.addEventListener('click', event => event.stopPropagation());
         modal.addEventListener('click', () => modal.classList.remove('open'));
+        //mobile responsive
+        // open/close menu
+        menuMobile.onclick = function() {
+                console.log(header.clientHeight)
+                if (header.clientHeight === headerHeight) {
+                    header.style.height = 'auto';
+                } else header.style.height = null;
+            }
+            // auto close when choose menu
+        let menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (let menuItem of menuItems) {
+            menuItem.onclick = function(e) {
+                let parent = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (parent) {
+                    e.preventDefault();
+                } else {
+                    header.style.height = null;
+                }
+            }
+        }
     </script>
 </body>
 

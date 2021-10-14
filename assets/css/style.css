@@ -182,10 +182,11 @@ html {
     height: 46px;
     background-color: #000;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    /* overflow: hidden; */
 }
 
 #nav {
@@ -236,19 +237,38 @@ html {
     background-color: #fff;
 }
 
+#header .mobile-menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
 }
 
+.menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
-    line-height: 46px;
+    line-height: 46px!important;
+}
+
+.mobile-menu-btn:hover {
+    background-color: #fff;
+    /* color: black; */
+}
+
+.mobile-menu-btn:hover .menu-icon {
+    background-color: #fff;
+    color: #000;
 }
 
 #header .search-btn:hover {
-    background-color: #f44336!important;
+    background-color: #f44336;
     cursor: pointer;
 }
 
@@ -281,6 +301,7 @@ html {
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
