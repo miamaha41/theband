@@ -33,7 +33,10 @@
         width: 100%;
     }
     .s-mt-8 {
-        margin: 8px 0px!important;
+        margin: 8px 0px !important;
+    }
+    .send-size {
+        line-height: 40px;
     }
 }
 
